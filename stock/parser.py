@@ -29,3 +29,14 @@ def plot_stock(name):
     plt.ylabel("Стоимость")
     plt.grid(color='pink')
     plt.show()
+
+def coast_stock(name):
+    """Вывод цены конкретной акции на сегодня"""
+    # Текущая дата
+    dt_now = datetime.date.today()
+    respose = requests.get(
+        f'https://iss.moex.com/iss/securities/{name}/aggregates.json?date=2022-09-21')
+    if respose.status_code == 200:
+        # Преобразование JSON в словарь
+        j = respose.json()
+    print(j)
