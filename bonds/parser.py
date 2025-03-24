@@ -26,7 +26,7 @@ def get_bond_details(secid):
 
 
 # Пример: получение данных по облигации с SECID = 'RU000A0JX0A4'
-bond_secid = "SU26248RMFS3"
+bond_secid = "RU000A10B008"
 bond_data = get_bond_details(bond_secid)
 
 if bond_data is not None:
