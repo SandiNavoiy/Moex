@@ -1,3 +1,4 @@
+from bonds.parser import get_moex_bonds, get_moex_bonds_urovni_stavok, get_all_bond_tickers
 from stock.parser import get_moex_securities
 
 print("Выберете тип ценных бумаг")
@@ -9,7 +10,7 @@ if r == "1":
         print("Акции:")
         print(stocks)
 elif r == "2":
-    bonds = get_moex_securities("bonds")
+    bonds = get_moex_bonds_urovni_stavok()
     if bonds is not None:
         print("Облигации:")
         print(bonds)
