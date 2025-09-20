@@ -14,22 +14,23 @@ def get_bond_details(s):
 
     data = response.json()
 
-    columns = data['securities']['columns']
-    rows = data['securities']['data']
+    # columns = data['securities']['columns']
+    # rows = data['securities']['data']
+    #
+    # if not rows:
+    #     print(f"Нет данных для {s}")
+    #     return None
+    #
+    # df = pd.DataFrame(rows, columns=columns)
+    # pprint(data)
 
-    if not rows:
-        print(f"Нет данных для {s}")
-        return None
-
-    df = pd.DataFrame(rows, columns=columns)
-
-    return df
+    return data['marketdata_yields']['data'][0][6], data['securities']['data'][0][12]
 
 
 # Пример: получение данных по облигации с SECID = 'RU000A0JX0A4'
-bond_secid = "RU000A10B008"
+bond_secid = "RU000A10B313"
 bond_data = get_bond_details(bond_secid)
 
 if bond_data is not None:
 
-    print(bond_data)
+    pprint(bond_data)
