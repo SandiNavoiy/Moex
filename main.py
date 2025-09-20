@@ -14,3 +14,7 @@ elif r == "2":
     if bonds is not None:
         print("Облигации:")
         print(bonds)
+
+
+elif r == "3":
+
