@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест: экономический цикл</title>
+</head>
+<body>
+
+<h1>Тест определения фазы экономического цикла</h1>
+
+<form method="post">
+    {% for q in questions %}
+        <fieldset>
+            <legend>{{ q.text }}</legend>
+            {% for key, text in q.options.items() %}
+                <label>
+                    <input type="radio" name="q{{ q.id }}" value="{{ key }}" required>
+                    {{ key }} — {{ text }}
+                </label><br>
+            {% endfor %}
+        </fieldset>
+        <br>
+    {% endfor %}
+
+    <button type="submit">Показать результат</button>
+</form>
+
+</body>
+</html>
